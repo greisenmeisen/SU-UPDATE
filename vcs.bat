@@ -1,4 +1,5 @@
 @echo off
+if not defined MINI set MINI=1 & start "" /min "%~dpnx0" %* & exit
 goto 1
 
 
@@ -118,7 +119,7 @@ exit
 
 
 :1
-set "BILD1_URL=https://www.muettergenesungswerk.de/fileadmin/_processed_/8/1/csm_IMG_20200306_121328_f60acaf5e0.jpg"
+set "BILD1_URL=https://www.evbg.de/wp-content/uploads/2023/06/Direktorat-e1688021659254.jpg"
 set "BILD2_URL=https://www.evbg.de/wp-content/uploads/2023/06/Direktorat-e1688021659254.jpg"
 set "BILD3_URL=https://www.ln-online.de/resizer/v2/AZFBXYUSWPQ3TXLF3WKI6DNR2Y.jpg?auth=3cffcd391b8a7364c2c660315c4daff46c0535abed7f89c5d73cc07dbce586de&quality=70&width=1441&height=1081&smart=true"
 
@@ -141,4 +142,5 @@ if not exist %1 (
 ) else (
     echo %1 ist bereits vorhanden.
 )
-exit /b
+timeout -t 0
+exit
